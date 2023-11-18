@@ -1,0 +1,38 @@
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  border: 2px solid black;
+  padding: 30px 50px;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: color 500ms ease 100ms;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: blue;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transform-origin: top right;
+  transform: rotate(-90deg);
+  transition: transform 500ms ease;
+}
+a:hover::before {
+  transform: rotate(0);
+}
+a:hover {
+  color: white;
+}
